@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movies_app/Ui/HomeScreen/Browse/movieList.dart';
 import 'package:movies_app/Ui/HomeScreen/homeScreen.dart';
 
 void main() {
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       routes: {
         homeScreen.routename : (_) =>homeScreen(),
+        MovieList.routeName : (_) => const MovieList()
       },
       initialRoute: homeScreen.routename,
       title: 'Flutter Demo',
