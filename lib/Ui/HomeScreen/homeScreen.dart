@@ -1,24 +1,26 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:movies_app/Ui/HomeScreen/Browse/Browse.dart';
-import 'package:movies_app/Ui/HomeScreen/Home/Home.dart';
 import 'package:movies_app/Ui/HomeScreen/Search/Search.dart';
-import 'package:movies_app/Ui/HomeScreen/WatchList/WatchList.dart';
+import 'package:movies_app/Ui/HomeScreen/homeScreenWidgets/homeScreen.dart';
 
-class homeScreen extends StatefulWidget{
-  static const String routename='home';
+import 'WatchList/WatchList.dart';
+
+class Home extends StatefulWidget{
+  static const String routeName='home';
+
+  const Home({super.key});
 
   @override
-  State<homeScreen> createState() => _homeScreenState();
+  State<Home> createState() => _HomeState();
 }
 
-class _homeScreenState extends State<homeScreen> {
+class _HomeState extends State<Home> {
   int selectTapIndex=0;
   List<Widget>taps=[
-    Home(),
-    Search(),
-    Browse(),
-    WatchList()
+    const HomeScreen(),
+    const Search(),
+    const Browse(),
+    const WatchList()
   ];
 
   @override
@@ -33,27 +35,31 @@ class _homeScreenState extends State<homeScreen> {
        },
        currentIndex: selectTapIndex,
        items: [
-         BottomNavigationBarItem(
+         const BottomNavigationBarItem(
            backgroundColor: Colors.black,
              icon: ImageIcon(AssetImage('assets/images/Home_icon.png'),
+               size: 35,
              ),
            label: ''
          ),
          BottomNavigationBarItem(
              backgroundColor: Theme.of(context).primaryColor,
-             icon:ImageIcon(AssetImage('assets/images/Search_icon.png')
+             icon:const ImageIcon(AssetImage('assets/images/Search_icon.png'),
+               size: 35,
              ),
            label: ''
          ),
          BottomNavigationBarItem(
              backgroundColor: Theme.of(context).primaryColor,
-             icon:ImageIcon(AssetImage('assets/images/Downloads_icon.png')
+             icon:const ImageIcon(AssetImage('assets/images/Downloads_icon.png'),
+               size: 35,
              ),
            label: ''
          ),
          BottomNavigationBarItem(
              backgroundColor: Theme.of(context).primaryColor,
-             icon:ImageIcon(AssetImage('assets/images/watchList_icon.png')
+             icon:const ImageIcon(AssetImage('assets/images/watchList_icon.png'),
+               size: 35,
              ),
            label: ''
          )

@@ -1,16 +1,16 @@
 class MovieModel {
-  String? movie_title;
-  int? movie_release_year; // Change the data type to int
-  String? movie_poster_url;
+  String? movieTitle;
+  int? movieReleaseYear; // Change the data type to int
+  String? moviePosterUrl;
   double? rating;
   String? overview;
 
-  MovieModel(this.movie_title, String releaseDate, this.rating,this.overview, this.movie_poster_url) {
+  MovieModel(this.movieTitle, String releaseDate, this.rating,this.overview, this.moviePosterUrl) {
     // Parse the year from the release date string
     if (releaseDate.isNotEmpty) {
       final dateParts = releaseDate.split('-');
       if (dateParts.isNotEmpty) {
-        movie_release_year = int.tryParse(dateParts[0]);
+        movieReleaseYear = int.tryParse(dateParts[0]);
     }
     }
     }
